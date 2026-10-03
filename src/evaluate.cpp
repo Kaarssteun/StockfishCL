@@ -31,11 +31,16 @@
 #include "nnue/network.h"
 #include "nnue/nnue_misc.h"
 #include "position.h"
+#include "tune.h"
 #include "types.h"
 #include "uci.h"
 #include "nnue/nnue_accumulator.h"
 
 namespace Stockfish {
+
+int alignNnueDiv = 65536, alignOptDiv = 16384, materialScaleBase = 90649;
+TUNE(SetRange(32768, 98304), alignNnueDiv, SetRange(8192, 24576), alignOptDiv,
+     SetRange(60000, 120000), materialScaleBase);
 
 static int simple_eval(const Position& pos) {
     const Color c = pos.side_to_move();
@@ -69,11 +74,11 @@ Value scale_evaluation(Value nnue, int optimism, const Position& pos) {
     int alignment = (se_norm * nnue_norm) / 512;
 
     // When winning, we favor easy positions, and vice versa
-    int base_eval = nnue + (nnue * alignment) / 65536 + (optimism * alignment) / 16384;
+    int base_eval = nnue + (nnue * alignment) / alignNnueDiv + (optimism * alignment) / alignOptDiv;
 
     // Scale the combined evaluation by total material
     int material = 521 * pos.count<PAWN>() + pos.non_pawn_material();
-    int v        = base_eval * i64(90649 + material) / 90649;
+    int v        = base_eval * i64(materialScaleBase + material) / materialScaleBase;
 
     // Damp down the evaluation linearly when shuffling
     v -= v * pos.rule50_count() / 189;
