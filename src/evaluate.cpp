@@ -69,7 +69,7 @@ Value scale_evaluation(Value nnue, int optimism, const Position& pos) {
     int alignment = (se_norm * nnue_norm) / 512;
 
     // When winning, we favor easy positions, and vice versa
-    int base_eval = nnue + (nnue * alignment) / 65536 + (optimism * alignment) / 16384;
+    int base_eval = nnue + (nnue * alignment) / 49152 + (optimism * alignment) / 16384;
 
     // Scale the combined evaluation by total material
     int material = 521 * pos.count<PAWN>() + pos.non_pawn_material();
