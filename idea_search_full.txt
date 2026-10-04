@@ -1,0 +1,119 @@
+169336 runs in index
+
+== qsearch SEE with (capture) history: 6 runs
+  2026-09-07 Fisherman      Lft1B_SEE                      10+0.1 stopped   LLR -2.311 elo  -0.49±1.28  g  70432 | Adjust qsearch SEE with capture history 23x
+  2026-09-07 Fisherman      Lft1B_SEE                      10+0.1 stopped   LLR -2.325 elo  -3.24±2.49  g  18752 | Adjust qsearch SEE with capture history 50x
+  2026-09-04 Fisherman      Lft1B                          10+0.1 rejected  LLR -2.967 elo   -0.0±0.8   g 179104 | Adjust qsearch SEE with capture history
+  2026-08-22 linrock        qs-see-hist                    10+0.1 rejected  LLR -2.948 elo  -0.76±1.28  g  69952 | Adjust qsearch capture SEE pruning using history
+  2024-08-23 TarasVuk       qsearch_see_history            10+0.1 rejected  LLR -2.959 elo   0.28±0.56  g 388224 | take 1
+  2024-05-31 shawnxu        test279                        10+0.1 rejected  LLR -2.927 elo  -1.47±1.62  g  45440 | port SEE capthist to qsearch
+
+== quiet TT move in qsearch: 12 runs
+  2026-05-15 OscarLo238     qsearch                        10+0.1 rejected  LLR -2.947 elo  -1.37±1.55  g  47168 | removed irrelevant main history adjustment skip quiet TT moves earlier
+  2026-05-15 OscarLo238     qsearch                        10+0.1 stopped   LLR      0 elo      -±-     g      0 | skip quiet TT moves earlier in qsearch
+  2026-05-15 OscarLo238     qsearch                        10+0.1 stopped   LLR  0.585 elo   3.29±4.28  g   6336 | skip quiet TT moves earlier in qsearch
+  2025-01-18 fury           qs_conthist                    10+0.1 rejected  LLR -2.964 elo  -0.97±1.41  g  62272 | update conthist in qs when bestMove is quiet and not TT move (evasions
+  2023-12-07 pb00067        resetTTmove2                   10+0.1 rejected  LLR -2.932 elo   0.26±0.59  g 352768 | Take 2: qsearch: reset quiet TT move if not raising alpha anymore
+  2023-12-07 pb00067        resetTTmove2                   10+0.1 rejected  LLR  -2.93 elo  -0.74±1.3   g  72768 | Take 1: qsearch: reset quiet TT move if not bestMove anymore
+  2023-09-25 rn5f107s2      lessQuietCheckEvasionsForLow   10+0.1 rejected  LLR -2.924 elo  -0.56±1.19  g  84224 | Prune after the first quite check evasion in qsearch if we have no ttM
+  2022-02-16 Lorenz         qs_update_viz                  10+0.1 rejected  LLR -2.935 elo  -1.44±1.87  g  34896 | Penalize only quiet ttMoves
+  2019-11-03 sg             qs_ttmove                      10+0.1 accepted  LLR   2.96 elo   1.71±1.91  g  54627 | No futility pruning in quience search for quiet TT move.
+  2014-11-11 lbraesch       qstt                          15+0.05 accepted  LLR  2.956 elo   0.94±2.72  g  25085 | allow quiet ttMove in qsearch(). check for non regression with hash pr
+  2014-11-10 lbraesch       qstt                          60+0.05 accepted  LLR  2.958 elo   0.74±1.95  g  41181 | allow quiet ttMove in qsearch()
+  2014-11-10 lbraesch       qstt                          15+0.05 accepted  LLR  2.946 elo   1.04±2.37  g  33067 | allow quiet ttMove in qsearch()
+
+== correction history on losing captures: 2 runs
+  2018-12-27 MJZ1977        BadCapture2                    10+0.1 rejected  LLR -2.942 elo -10.58±6.72  g   4665 | Reduced search for bad captures. SEE < -800 Rerun after correction
+  2017-10-27 snicolet       bad_capture                    10+0.1 stopped   LLR  -1.12 elo  -0.69±3.84  g  11077 | Take 2: margin = 200. Use correct bounds sprt(0..4)
+
+== history-adjusted LMP (late move pruning): 8 runs
+  2018-07-28 sg             history_update3^^^             10+0.1 rejected  LLR -2.948 elo  -0.81±3.39  g  18010 | Update history of move count pruned moved.
+  2018-03-14 sg             mcp                            10+0.1 rejected  LLR -2.958 elo  -1.75±3.76  g  13306 | Do move count pruning only if history < 10000
+  2017-08-20 sg             prevBestMoveHistory3           10+0.1 rejected  LLR -2.946 elo  -8.62±6.27  g   4313 | No move count pruning if previous best move (Park with prio -1)
+  2016-06-21 VoyagerOne     mch                            10+0.1 rejected  LLR -2.952 elo  -4.44±4.82  g   7353 | Don't move count prune good history.
+  2016-05-23 VoyagerOne     mcp-stats                      10+0.1 rejected  LLR -2.963 elo   0.54±1.9   g  46574 | Use history stats to assist with move count pruning.
+  2016-02-02 sg             mc_pruning                     10+0.1 rejected  LLR -2.948 elo  -3.26±4.34  g   9155 | Try another formula (using history, cmh and movecount) to constraint m
+  2016-02-02 sg             mc_pruning                     10+0.1 rejected  LLR -2.945 elo   0.53±1.96  g  44574 | Try another formula (using history, cmh and movecount) to constraint m
+  2015-10-23 VoyagerOne     MCPt                           10+0.1 rejected  LLR -2.953 elo  -2.64±4.12  g  10531 | Use History stats to assist in move count pruning.
+
+== countermove fail-low bonus: 27 runs
+  2026-03-17 tcberkley      experiment/bonusscale-moveco   10+0.1 stopped   LLR -1.776 elo  -1.12±1.91  g  33856 | Add moveCount to fail-low countermove bonusScale When the current node
+  2025-12-29 maximmasiutin  feature/cutoffcnt-bonusscale   10+0.1 rejected  LLR -2.928 elo  -0.46±1.15  g  92768 | Boost bonusScale when child has multiple cutoffs At fail-low positions
+  2023-11-29 sg             fail_low_update2               10+0.1 rejected  LLR -2.935 elo  -1.31±1.58  g  50272 | No fail low update if previous move was first move.
+  2023-11-28 sg             fail_low_update_mc             10+0.1 rejected  LLR -2.931 elo  -0.85±1.36  g  67328 | Increase fail low update bonus further if previous move count > 30.
+  2023-11-28 sg             fail_low_update_mc^            10+0.1 rejected  LLR -2.933 elo   0.22±0.64  g 307904 | Increase fail low update bonus further if previous move count > 20.
+  2023-11-05 sg             tweak_pawn_history3            10+0.1 stopped   LLR -1.762 elo    0.2±0.84  g 175456 | Retest this yellow patch after commit 'Update pawn history based on st
+  2023-11-04 sg             tweak_pawn_history3            60+0.6 rejected  LLR -2.937 elo   0.25±0.78  g 179298 | LTC (rebased): Update pawn history also in fail low case like main his
+  2023-11-03 sg             tweak_pawn_history3            10+0.1 accepted  LLR  2.941 elo   1.29±1.02  g 119264 | Update pawn history also in fail low case like main history if prior m
+  2023-10-27 sg             tweak_pawn_history             10+0.1 rejected  LLR  -2.95 elo  -2.01±1.85  g  36416 | Half effect: Update pawn history also in fail low case like main histo
+  2023-10-27 sg             tweak_pawn_history^            10+0.1 rejected  LLR -2.989 elo  -1.09±1.46  g  57952 | Double effect: Update pawn history also in fail low case like main his
+  2023-10-27 sg             tweak_pawn_history             10+0.1 rejected  LLR -2.928 elo   0.15±0.7   g 248896 | Update pawn history also in fail low case like main history if prior m
+  2021-07-13 BM123499       Test90                         10+0.1 rejected  LLR  -2.93 elo  -1.19±1.53  g  28704 | Less Bonus for prior countermove that caused the fail low
+  2021-05-25 sg             lmra                           10+0.1 rejected  LLR -2.952 elo  -4.27±2.67  g  10016 | Ignore no-likelyfailLow reduction if previous moveCount reduction trig
+  2021-05-25 sg             lmra^                          10+0.1 rejected  LLR -2.958 elo  -0.97±1.46  g  34856 | Ignore previous moveCount reduction if no-likelyfailLow reduction trig
+  2021-01-25 pb00067        counterMovePly                 10+0.1 rejected  LLR -2.944 elo  -1.41±1.94  g  21864 | Take 2: out aging with fail lows
+  2020-04-04 silversolver1  countermove_4                  10+0.1 rejected  LLR -2.948 elo  -0.16±1.31  g 101008 | boost bonus for prior countermove that caused fail low by 1/2. might t
+  2018-05-14 VoyagerOne     flBonusPV                      10+0.1 rejected  LLR -2.956 elo   0.59±2.06  g  43918 | Extra Bonus at PvNode for prior move that cause a fail low
+  2018-05-14 VoyagerOne     flHistoryStats                 10+0.1 rejected  LLR -2.966 elo  -1.48±3.57  g  14526 | Bonus for our regular stats table if a prior move caused a fail low at
+  2017-12-14 sg             update_stats4                  60+0.6 rejected  LLR -2.944 elo  -3.85±3.83  g   8215 | LTC; Greater stats update if fail low at an expected pv or cut node fo
+  2017-12-13 sg             update_stats4                  10+0.1 accepted  LLR  2.945 elo   4.59±3.47  g  14007 | Greater stats update if fail low at an expected pv or cut node for pre
+  2017-11-23 VoyagerOne     failLowLMR                     10+0.1 rejected  LLR -2.953 elo  -6.78±5.66  g   5278 | Don't do LMR at rootNodes if prior move(s) failed low...
+  2017-11-01 VoyagerOne     ttFHbonus'                     60+0.6 rejected  LLR  -2.95 elo  -0.17±1.89  g  32230 | LTC: Bonus for prior countermove that caused the fail low (like we do 
+  2017-01-27 VoyagerOne     ttStatPB                       60+0.6 rejected  LLR -2.943 elo  -6.35±4.62  g   5474 | See how this fare at LTC...since stats are TC sensitive. Bonus for pri
+  2017-01-26 VoyagerOne     ttStatPB                       10+0.1 rejected  LLR -2.968 elo   0.14±2.27  g  32583 | Bonus for prior move that caused TT-moved to fail low.
+  2016-04-21 cibao          history_fail_low               10+0.1 rejected  LLR -2.964 elo  -2.34±3.82  g  11442 | Always update history stats when updating CounterMoveHistory stats.
+
+== correction history update when best move is a (losing) capture: 7 runs
+  2026-09-19 sg             multicut_correction_history3   10+0.1 rejected  LLR -2.931 elo  -0.31±1.01  g 109120 | If Multicut update correction history only if no tt capture or singula
+  2026-07-03 bobbypaper     promotion-correction-stage     10+0.1 rejected  LLR -2.952 elo   0.02±0.78  g 185248 | Use capture stage for correction history. Exclude queen promotions fro
+  2025-01-29 sg             tweak_correction9              10+0.1 rejected  LLR -2.931 elo   0.36±0.46  g 583392 | Allow correction history update only if no good capture exists (this e
+  2025-01-28 sg             tweak_correction6              10+0.1 rejected  LLR -2.974 elo  -0.35±1.09  g 106816 | Correction history update is only done if best move is not capture. So
+  2024-11-21 pb00067        simpCorrAdjust                 10+0.1 rejected  LLR -2.959 elo -17.17±4.67  g   5408 | Simplification attempt: can we update corr history also in case bestmo
+  2023-12-31 sg             tweak_corr_hist                10+0.1 rejected  LLR -2.936 elo  -0.17±0.94  g 132448 | Do not update correction history if best move from capture stage.
+  2018-07-22 sg             lmr_rewrite                    10+0.1 accepted  LLR  2.954 elo   3.54±3.9   g  13556 | Check a non-functional LMR rewrite for non-regression (if this passes 
+
+== continuation history shared/common gravity base: 35 runs
+  2026-09-12 sg             tweak_corrhist3bPR             60+0.6 accepted  LLR  2.938 elo   1.67±1.47  g  37320 | LTC: [Rebased] Do VVLTC non-regression for verification. Add (ss - 6)-
+  2026-09-06 sg             tweak_corrhist3b               60+0.6 accepted  LLR  2.943 elo   1.06±0.67  g 222570 | LTC: Add (ss - 6)->continuationCorrectionHistory. Scale down weights t
+  2026-09-04 sg             tweak_corrhist2a               10+0.1 rejected  LLR -2.948 elo  -0.01±0.81  g 173728 | Add (ss - 3)->continuationCorrectionHistory. Scale down weights to mai
+  2026-09-04 sg             tweak_corrhist3b               10+0.1 accepted  LLR  2.953 elo   1.41±1.09  g  96576 | Add (ss - 6)->continuationCorrectionHistory. Scale down weights to mai
+  2026-07-18 Fisherman      PlentyContCorrHist             10+0.1 stopped   LLR -1.686 elo  -3.72±3.1   g  12064 | Index continuationCorrectionHistory based on threatened. Lifted from P
+  2026-06-25 bobbypaper     conthist-shard4                5+0.05 accepted  LLR  2.936 elo   1.51±1.14  g  83184 | SMP speed candidate. Shard shared continuation history into four worke
+  2026-06-25 bobbypaper     conthist-normalmove-state      5+0.05 stopped   LLR      0 elo      -±-     g      0 | SMP speed candidate. Shard shared continuation history into four worke
+  2026-06-25 bobbypaper     conthist-normalmove-state      10+0.1 stopped   LLR  0.501 elo   1.07±2.09  g  24896 | Shard shared continuation history into four worker-selected shards and
+  2026-06-03 anematode      shared-conthist                5+0.05 accepted  LLR  2.942 elo   6.33±2.62  g  14720 | LTC: 16th test to assess scaling, rebased. See https://tests.stockfish
+  2026-04-26 maximmasiutin  contcorr-hashed-i17-shift      10+0.1 stopped   LLR -0.668 elo  -0.49±2.42  g  20480 | Hashed continuation correction history with shift-based gravity
+  2026-03-19 tcberkley      codex/experiments/movepick-d   10+0.1 stopped   LLR      0 elo      -±-     g      0 | Remove the 6-ply continuation term from quiet movepick Drop the farthe
+  2026-03-15 maximmasiutin  skip-1                         5+0.05 rejected  LLR -2.935 elo  -2.56±1.97  g  28216 | Skip small ContinuationHistory and shared correction writes
+  2026-03-06 sg             tuned_from_continuation_hist   10+0.1 rejected  LLR -2.943 elo  -3.43±2.29  g  22976 | Double effect: Test final tuned values (ignoring W[4] because it has t
+  2026-03-06 sg             tuned_from_continuation_hist   10+0.1 rejected  LLR -2.933 elo   -4.0±2.47  g  20256 | Test final tuned values (ignoring W[4] because it has the same magnitu
+  2026-03-04 sg             tune_from_continuation_histo   10+0.1 spsa      LLR      - elo  -0.57±1.11  g  97970 | Tune weights of new continuation history based on from square of first
+  2026-02-19 maximmasiutin  shared-continuation-history    5+0.05 rejected  LLR -2.967 elo  -1.64±1.65  g  41288 | Previous submission had bug: was based on wrong master
+  2026-02-19 maximmasiutin  shared-continuation-history    5+0.05 stopped   LLR      0 elo      -±-     g      0 | Previous submission had bug: it was based on wrong master
+  2026-02-19 maximmasiutin  shared-continuation-history    5+0.05 stopped   LLR -1.212 elo  -4.36±3.88  g   7408 | bug: the branch was based on wrong (old) master
+  2025-08-03 AliceRoselia   5th_conthist_solution          10+0.1 rejected  LLR -2.936 elo  -0.57±1.21  g  84384 | Rebased. Tried combining the idea of asymmetric eval (winning param se
+  2024-05-24 shawnxu        test250                        10+0.1 rejected  LLR -2.945 elo  -3.86±2.45  g  21248 | double weight of pawn history is conthist based pruning (fixed wrong s
+  2024-05-24 shawnxu        test249                        10+0.1 rejected  LLR -2.939 elo  -5.11±2.77  g  16384 | lmrdepth in conthist based pruning
+  2024-05-24 shawnxu        test250                        10+0.1 stopped   LLR -0.673 elo  -3.94±5.15  g   4768 | double weight of pawn history is conthist based pruning
+  2024-05-19 rn5f107s2      rootHistory                    10+0.1 rejected  LLR -2.956 elo  -5.63±2.85  g  14816 | Update continuation historys at root, rebased on top of sg pr
+  2022-12-19 fauzi2         ee17sim                        10+0.1 rejected  LLR -2.954 elo  -2.32±1.59  g  45552 | Removal of Continuation history based pruning
+  2022-06-20 BM123499       Simplify106                    10+0.1 rejected  LLR -2.938 elo   -1.2±1.07  g 104288 | Simplify away Continuation history based pruning on qsearch
+
+== correction history on (upcoming) repetition / draw: 16 runs
+  2024-12-27 shawnxu        test919                        10+0.1 rejected  LLR -2.948 elo  -0.24±1.0   g 121856 | correct draw score
+  2024-06-29 Peregrine      fixBadTBPVs                    10+0.1 stopped   LLR  0.324 elo   0.32±2.92  g  14336 | Correctly fix very bad PVs (draw and loss when it's a win) when values
+  2022-04-23 Lorenz         master                         30+0.3 fixed_games LLR      - elo   0.14±3.11  g  10000 | Estimate UHO corrected draw ratio at intermediate time control. (Relat
+  2020-04-17 xoto           sfsym1                         10+0.1 rejected  LLR -2.937 elo  -1.16±2.08  g  40232 | Symmetrical (correct) position more drawish, -4.
+  2020-04-17 xoto           sfsym1                         10+0.1 rejected  LLR -2.938 elo  -1.57±2.33  g  31404 | Symmetrical (correct def) position more drawish, -2.
+  2019-06-04 svivanov       drawval                        10+0.1 rejected  LLR -2.944 elo  -2.75±4.06  g  12758 | Take 4: corrected alpha after cycle detection
+  2019-04-14 svivanov       cyclefix2                      60+0.6 accepted  LLR  2.962 elo   2.18±2.8   g  19620 | LTC: Fix cycle detection in presence of repetitions search() may incor
+  2019-04-14 svivanov       cyclefix2                      10+0.1 accepted  LLR  2.947 elo   4.69±4.37  g  10604 | Fix cycle detection in presence of repetitions search() may incorrectl
+  2019-04-14 svivanov       cyclefix2                      10+0.1 rejected  LLR -2.955 elo  -3.02±4.13  g  12072 | Fix cycle detection in presence of repetitions search() may incorrectl
+  2018-08-05 Guardian       SmallImbalanceSF               10+0.1 rejected  LLR -2.944 elo   -3.4±4.18  g  11973 | A small correction for a more draw scale factor in the case of the abs
+  2018-03-15 atumanian      contempt_initiative            10+0.1 fixed_games LLR      - elo   -3.5±1.89  g  50000 | Apply the correction to the aspiration window and to the draw score in
+  2017-12-12 vdv            scoreDraw2                     10+0.1 rejected  LLR -2.945 elo   0.32±2.09  g  37905 | stc, take 4 (paste correct bench).
+  2017-10-21 vdv            pvDraw                         60+0.6 accepted  LLR  2.946 elo   1.77±1.39  g  59579 | speculative LTC of take 4. The higher the draw rate, the more effectiv
+  2017-10-15 SC             materialDraw                   10+0.1 fixed_games LLR      - elo   0.65±3.24  g  15547 | Quick check for the effect of correctly checking draw due to insuffici
+  2017-08-06 Guardian       imbalance                      10+0.1 rejected  LLR -2.967 elo   -0.2±2.52  g  26117 | If using correction to QR and 4 minors imbalance, which looks more dra
+  2015-11-08 Sergei         prev_moves_3fold               10+0.1 accepted  LLR  2.949 elo   2.43±1.87  g  52353 | Implement a correct 3-fold repetition detection for previous (i.e. bef
+
