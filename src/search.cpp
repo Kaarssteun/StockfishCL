@@ -753,6 +753,18 @@ Value Search::Worker::search(
     // Check if we have an upcoming move that draws by repetition
     if (!rootNode && alpha < VALUE_DRAW && pos.upcoming_repetition(ss->ply))
     {
+        // A drawing line is available, so a negative static eval here was too
+        // pessimistic: nudge the correction history towards the draw score.
+        if (!pos.checkers())
+        {
+            const Value corrEval =
+              to_corrected_static_eval(evaluate(pos), correction_value(*this, pos, ss));
+            if (corrEval < VALUE_DRAW)
+                update_correction_history(
+                  pos, ss, *this,
+                  std::min(-corrEval * depth * 12 / 128, CORRECTION_HISTORY_LIMIT / 4));
+        }
+
         alpha = value_draw(nodes);
         if (alpha >= beta)
             return alpha;
