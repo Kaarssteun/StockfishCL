@@ -1,3 +1,4 @@
-Metadata index of finished Fishtest runs (public API /api/finished_runs).
-PARTIAL snapshot: newest ~21,950 runs (pages 1-439 of 3387); full history to follow.
-Built with build_index.py; Elo = logistic Elo from pentanomial (or WDL for old runs), err = 95%.
+Metadata index of ALL finished Fishtest runs (public API /api/finished_runs), fetched 2026-10-04.
+169,336 runs, 2013-02-13 .. 2026-10-03 (158,338 SPRT, 5,321 SPSA, 5,677 fixed-games).
+One row per run; columns in the CSV header. Elo = logistic Elo from pentanomial (WDL for old runs), elo_err95 = 95% half-width.
+Built with build_index.py (resumable, polite paging). search_ideas.py = regex search over branch+info.
