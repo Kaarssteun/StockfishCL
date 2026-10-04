@@ -75,6 +75,16 @@ struct StatsEntry {
 
         assert(std::abs(T(*this)) <= D);
     }
+
+    // Like operator<<, but the gravity term uses a shared base value
+    // instead of the entry's own value.
+    void update_with_base(int bonus, int base) {
+        int clampedBonus = std::clamp(bonus, -D, D);
+        T   val          = *this;
+        *this            = std::clamp(val + clampedBonus - base * std::abs(clampedBonus) / D, -D, D);
+
+        assert(std::abs(T(*this)) <= D);
+    }
 };
 
 enum StatsType {

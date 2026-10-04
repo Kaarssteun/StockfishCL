@@ -2050,6 +2050,13 @@ void update_continuation_histories(Stack* ss, Piece pc, Square to, int bonus) {
     constexpr int CMHCMultipliers[] = {94, 103, 110, 106, 119, 126, 121};
     int           positiveCount     = 0;
 
+    // Shared gravity base: average of the continuation histories of plies 1, 2, 3, 4 and 6
+    int base = 0;
+    for (int i : {1, 2, 3, 4, 6})
+        if (((ss - i)->currentMove).is_ok())
+            base += (*(ss - i)->continuationHistory)[pc][to];
+    base /= 5;
+
     for (const auto [i, weight] : conthist_bonuses)
     {
         // Only update the first 2 continuation histories if we are in check
@@ -2063,7 +2070,7 @@ void update_continuation_histories(Stack* ss, Piece pc, Square to, int bonus) {
                 positiveCount++;
 
             int multiplier = CMHCMultipliers[positiveCount];
-            historyEntry << bonus * weight * multiplier / 65536 + 73 * (i < 2);
+            historyEntry.update_with_base(bonus * weight * multiplier / 65536 + 73 * (i < 2), base);
         }
     }
 }
