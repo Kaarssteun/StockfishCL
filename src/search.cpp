@@ -1334,6 +1334,11 @@ moves_loop:  // When in check, search starts here
         // Step 17. Make the move
         do_move(pos, move, st, givesCheck, capture, ss);
 
+        // When seeking mate, extend checks that leave a single legal reply,
+        // so forced checking sequences are followed further.
+        if (seekMate && givesCheck && ss->ply < 2 * rootDepth && MoveList<ALL>(pos).size() == 1)
+            extension++;
+
         // Add extension to new depth
         newDepth += extension;
 
